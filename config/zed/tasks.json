@@ -1,0 +1,146 @@
+[
+  {
+    "label": "Run Minitest $ZED_RELATIVE_FILE -n /$ZED_CUSTOM_RUBY_TEST_NAME/",
+    "command": "bundle",
+    "args": [
+      "exec",
+      "rails",
+      "test",
+      "$ZED_RELATIVE_FILE",
+      "-n",
+      "\"$ZED_CUSTOM_RUBY_TEST_NAME\""
+    ],
+    "tags": ["ruby-test"],
+    "reveal": "always",
+    "hide": "on_success",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": false,
+    "env": {
+      "RAILS_ENV": "test"
+    }
+  },
+  {
+    "label": "Run All Minitest Tests",
+    "command": "bundle",
+    "args": ["exec", "rails", "test"],
+    "tags": ["ruby-test"],
+    "reveal": "always",
+    "hide": "on_success",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": false,
+    "env": {
+      "RAILS_ENV": "test"
+    }
+  },
+  {
+    "label": "Run Minitest System Tests",
+    "command": "bundle",
+    "args": ["exec", "rails", "test:system"],
+    "tags": ["ruby-test"],
+    "reveal": "always",
+    "hide": "on_success",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": false,
+    "env": {
+      "RAILS_ENV": "test"
+    }
+  },
+  {
+    "label": "Run Plain Minitest $ZED_RELATIVE_FILE -n /$ZED_CUSTOM_RUBY_TEST_NAME/",
+    "command": "ruby",
+    "args": ["-Itest", "$ZED_RELATIVE_FILE", "-n", "\"$ZED_CUSTOM_RUBY_TEST_NAME\""],
+    "tags": ["ruby-test"],
+    "reveal": "always",
+    "hide": "on_success",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": false
+  },
+  {
+    "label": "Start Rails Server",
+    "command": "bundle",
+    "args": ["exec", "rails", "server"],
+    "tags": ["rails"],
+    "reveal": "always",
+    "hide": "never",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true,
+    "env": {
+      "RAILS_ENV": "development"
+    }
+  },
+  {
+    "label": "Start Rails Console",
+    "command": "bundle",
+    "args": ["exec", "rails", "console"],
+    "tags": ["rails"],
+    "reveal": "always",
+    "hide": "never",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": true,
+    "env": {
+      "RAILS_ENV": "development"
+    }
+  },
+  {
+    "label": "Run Database Migrations",
+    "command": "bundle",
+    "args": ["exec", "rails", "db:migrate"],
+    "tags": ["rails"],
+    "reveal": "always",
+    "hide": "on_success",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": false,
+    "env": {
+      "RAILS_ENV": "development"
+    }
+  },
+  {
+    "label": "Rollback Database Migrations",
+    "command": "bundle",
+    "args": ["exec", "rails", "db:rollback"],
+    "tags": ["rails"],
+    "reveal": "always",
+    "hide": "on_success",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": false,
+    "env": {
+      "RAILS_ENV": "development"
+    }
+  },
+  {
+    "label": "Run RuboCop",
+    "command": "bundle",
+    "args": ["exec", "rubocop", "-a"],
+    "tags": ["rails", "lint"],
+    "reveal": "always",
+    "hide": "on_success",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": false
+  },
+  {
+    "label": "Generate Rails Model",
+    "command": "bundle",
+    "args": ["exec", "rails", "generate", "model", "$ZED_CUSTOM_INPUT"],
+    "tags": ["rails", "generate"],
+    "reveal": "always",
+    "hide": "on_success",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": false,
+    "input": {
+      "prompt": "Enter model name and fields (e.g., Post title:string body:text)"
+    }
+  },
+  {
+    "label": "Generate Rails Controller",
+    "command": "bundle",
+    "args": ["exec", "rails", "generate", "controller", "$ZED_CUSTOM_INPUT"],
+    "tags": ["rails", "generate"],
+    "reveal": "always",
+    "hide": "on_success",
+    "allow_concurrent_runs": false,
+    "use_new_terminal": false,
+    "input": {
+      "prompt": "Enter controller name and actions (e.g., Posts index show)"
+    }
+  }
+]

@@ -1,0 +1,55 @@
+[
+  {
+    "label": "Debug Minitest $ZED_RELATIVE_FILE -n $ZED_CUSTOM_RUBY_TEST_NAME",
+    "adapter": "rdbg",
+    "request": "launch",
+    "program": "${workspaceRoot}/bin/rails",
+    "args": [
+      "test",
+      "${relativeFile}",
+      "-n",
+      "${ZED_CUSTOM_RUBY_TEST_NAME}"
+    ],
+    "env": {
+      "RAILS_ENV": "test"
+    },
+    "cwd": "${workspaceRoot}",
+    "useBundler": true
+  },
+  {
+    "label": "Debug All Minitest Tests",
+    "adapter": "rdbg",
+    "request": "launch",
+    "program": "${workspaceRoot}/bin/rails",
+    "args": ["test"],
+    "env": {
+      "RAILS_ENV": "test"
+    },
+    "cwd": "${workspaceRoot}",
+    "useBundler": true
+  },
+  {
+    "label": "Debug Rails Server",
+    "adapter": "rdbg",
+    "request": "launch",
+    "program": "${workspaceRoot}/bin/rails",
+    "args": ["server", "-p", "3000"],
+    "env": {
+      "RAILS_ENV": "development"
+    },
+    "cwd": "${workspaceRoot}",
+    "useBundler": true
+  },
+  {
+    "label": "Debug Rails Console",
+    "adapter": "rdbg",
+    "request": "launch",
+    "program": "${workspaceRoot}/bin/rails",
+    "args": ["console"],
+    "env": {
+      "RAILS_ENV": "development"
+    },
+    "cwd": "${workspaceRoot}",
+    "useBundler": true
+  }
+]

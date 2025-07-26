@@ -1,0 +1,112 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent": {
+    "default_model": {
+      "provider": "x_ai",
+      "model": "grok-3"
+    }
+  },
+  "icon_theme": "Catppuccin Mocha",
+  "ui_font_size": 18,
+  "buffer_font_size": 18,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Tokyo Night"
+  },
+  "edit_predictions": {
+    "mode": "subtle"
+  },
+  "auto_install_extensions": {
+    "html": true,
+    "dockerfile": true,
+    "ruby": true,
+    "emmet": true,
+    "catppuccin-icons": true,
+    "tokyo-night-themes": true
+  },
+  "restore_on_startup": "none",
+  "base_keymap": "Atom",
+  "close_on_file_delete": true,
+  "tabs": {
+    "file_icons": true
+  },
+  "format_on_save": "off",
+  "preview_tabs": {
+    "enabled": false
+  },
+  "terminal": {
+    "cursor_shape": "bar",
+    "blinking": "on"
+  },
+  "languages": {
+    "Ruby": {
+      "language_servers": [
+        "ruby-lsp",
+        "rubocop",
+        "tailwindcss-language-server",
+        "!solargraph",
+        "!steep"
+      ],
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "standardrb",
+          "arguments": ["--fix", "--stdin", "{buffer_path}"]
+        }
+      }
+    },
+    "HTML/ERB": {
+      "language_servers": [
+        "tailwindcss-language-server"
+      ],
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "erb-formatter",
+          "arguments": ["--stdin-filename", "{buffer_path}"]
+        }
+      }
+    }
+  },
+  "lsp": {
+    "ruby-lsp": {
+      "initialization_options": {
+        "formatter": "standard",
+        "linters": ["standard"],
+        "enabledFeatures": {
+          "formatting": true,
+          "diagnostics": true,
+          "codeActions": true,
+          "documentSymbols": true,
+          "inlayHint": true
+        }
+      }
+    },
+    "rubocop": {
+      "initialization_options": {
+        "safeAutocorrect": false,
+        "layoutMode": "autoCorrect"
+      }
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "includeLanguages": {
+          "html/erb": "html",
+          "ruby": "html",
+          "erb": "html"
+        },
+        "experimental": {
+          "classRegex": ["\\bclass:\\s*['\"]([^'\"]*)['\"]"]
+        }
+      }
+    }
+  }
+}
