@@ -22,7 +22,7 @@ window-maximized=true
 window-size=(768, 600)
 
 [control-center]
-last-panel='keyboard'
+last-panel='multitasking'
 window-state=(980, 640, false)
 
 [desktop/app-folders]
@@ -108,6 +108,9 @@ picture-options='zoom'
 picture-uri='file:///usr/share/backgrounds/gnome/blobs-l.svg'
 primary-color='#241f31'
 secondary-color='#000000'
+
+[desktop/search-providers]
+sort-order=['org.gnome.Settings.desktop', 'org.gnome.Contacts.desktop', 'org.gnome.Nautilus.desktop']
 
 [desktop/wm/keybindings]
 maximize=@as []
@@ -312,9 +315,9 @@ switch-to-application-4=@as []
 locations=@av []
 
 [software]
-check-timestamp=int64 1753435456
+check-timestamp=int64 1753522165
 first-run=false
-flatpak-purge-timestamp=int64 1753402337
+flatpak-purge-timestamp=int64 1753529354
 
 [tweaks]
 show-extensions-notice=false
