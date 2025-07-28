@@ -6,9 +6,9 @@
 if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
     echo "Afterlife is running..."
 
-    source ./scripts/01-install.sh
-    source ./scripts/02-set-gnome-keybindings.sh
-    source ./scripts/03-set-gnome-settings.sh
+    sudo pacman -Syu --noconfirm
+
+    source ./scripts/01-gnome-extensions.sh
 fi
 
 echo "All scripts in 'scripts' directory have been executed."
