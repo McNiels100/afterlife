@@ -5,6 +5,12 @@ sudo pacman -S --noconfirm --needed \
   fd eza fzf ripgrep zoxide \
   fastfetch btop mise ghostty \
   github-cli lazygit postgresql-libs \
-  imagemagick
+  imagemagick virt-manager qemu libvirt \
+  visual-studio-code-bin 
+
+sudo systemctl enable libvirtd
+sudo systemctl start libvirtd
+
+sudo usermod -aG libvirt $USER
 
 yay -S --noconfirm --needed lazydocker
